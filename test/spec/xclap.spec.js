@@ -585,7 +585,7 @@ describe("xclap", function() {
     xclap.load({
       ".stop": () => xclap.stop(),
       "test-stop": xclap.concurrent(
-        xclap.serial("~$echo abc", () => xsh.exec("sleep 2"), "~$echo BAD IF YOU SEE THIS"),
+        xclap.serial("~$echo abc", () => xsh.exec("sleep 5"), "~$echo BAD IF YOU SEE THIS"),
         xclap.serial(() => xaa.delay(100), ".stop", "~$echo BAD IF YOU SEE THIS ALSO")
       )
     });
